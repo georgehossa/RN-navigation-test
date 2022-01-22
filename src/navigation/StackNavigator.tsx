@@ -19,16 +19,19 @@ export type RootStackParams = {
   };
 };
 
-const Stack = createNativeStackNavigator();
+const {Navigator, Screen} = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Page01" component={Page01Screen} />
-      <Stack.Screen name="Page02" component={Page02Screen} />
-      <Stack.Screen name="Page03" component={Page03Screen} />
-      <Stack.Screen name="PersonaScreen" component={PersonaScreen} />
-    </Stack.Navigator>
+    <Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Screen name="Page01" component={Page01Screen} />
+      <Screen name="Page02" component={Page02Screen} />
+      <Screen name="Page03" component={Page03Screen} />
+      <Screen name="PersonaScreen" component={PersonaScreen} />
+    </Navigator>
   );
 };
 
